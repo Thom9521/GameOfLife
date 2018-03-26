@@ -10,6 +10,7 @@ public class Cell {
     private int cellsAlive = 0; //Antallet af celler i live
     private List neighborList;
     private String about;
+    private String name;
 
 
     public Cell(){
@@ -59,7 +60,7 @@ public class Cell {
                 about = "Cellen døde da den blev overfaldet af 3 eller flere celler.";
             }
         }
-        return about + " Cellen er " + cellAlive + " med " + livingNeighbours + " naboer.";
+        return about + " Celle " + name + " er " + cellAlive + " med " + livingNeighbours + " naboer.";
     }
 
 
@@ -78,5 +79,29 @@ public class Cell {
 
     public void setAlive(boolean alive) {
         this.alive = alive;
+    }
+
+    public List getNeighborList() {
+        return neighborList;
+    }
+
+    public void setNeighborList(List neighborList) {
+        this.neighborList = neighborList;
+    }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
