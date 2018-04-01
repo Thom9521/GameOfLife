@@ -7,7 +7,6 @@ public class Cell {
 
     private int livingNeighbours;
     private boolean alive;
-    private int cellsAlive = 0; //Antallet af celler i live
     private List neighborList;
     private String about;
     private String name;
@@ -15,7 +14,6 @@ public class Cell {
 
     public Cell(){
         livingNeighbours = 0;
-        cellsAlive++;
         List neighborList = new ArrayList();
 
     }
