@@ -1,8 +1,65 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <columnConstraints>
+      <ColumnConstraints maxWidth="92.0" minWidth="0.0" prefWidth="92.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="92.0" minWidth="0.0" prefWidth="0.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Button fx:id="b1" mnemonicParsing="false" onAction="#eButtonAction" text="GO" />
+      <Circle fx:id="c55" fill="DODGERBLUE" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+      <Circle fx:id="c45" fill="DODGERBLUE" layoutX="275.0" layoutY="212.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+      <Circle fx:id="c54" fill="DODGERBLUE" layoutX="275.0" layoutY="212.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+      <Circle fx:id="c44" fill="DODGERBLUE" layoutX="275.0" layoutY="212.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+      <Circle fx:id="c66" fill="DODGERBLUE" layoutX="275.0" layoutY="212.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+      <Circle fx:id="c65" fill="DODGERBLUE" layoutX="275.0" layoutY="212.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+      <Circle fx:id="c64" fill="DODGERBLUE" layoutX="275.0" layoutY="212.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+      <Circle fx:id="c46" fill="DODGERBLUE" layoutX="275.0" layoutY="212.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+      <Circle fx:id="c56" fill="DODGERBLUE" layoutX="275.0" layoutY="212.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+      <Circle fx:id="c33" fill="DODGERBLUE" layoutX="275.0" layoutY="212.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+      <Circle fx:id="c34" fill="DODGERBLUE" layoutX="163.0" layoutY="140.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+      <Circle fx:id="c35" fill="DODGERBLUE" layoutX="15.0" layoutY="29.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+      <Circle fx:id="c36" fill="DODGERBLUE" layoutX="15.0" layoutY="29.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+      <Circle fx:id="c37" fill="DODGERBLUE" layoutX="15.0" layoutY="29.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+      <Circle fx:id="c43" fill="DODGERBLUE" layoutX="15.0" layoutY="29.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+      <Circle fx:id="c47" fill="DODGERBLUE" layoutX="15.0" layoutY="29.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+      <Circle fx:id="c53" fill="DODGERBLUE" layoutX="15.0" layoutY="29.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+      <Circle fx:id="c57" fill="DODGERBLUE" layoutX="15.0" layoutY="29.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+      <Circle fx:id="c63" fill="DODGERBLUE" layoutX="15.0" layoutY="29.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+      <Circle fx:id="c67" fill="DODGERBLUE" layoutX="15.0" layoutY="29.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+      <Circle fx:id="c73" fill="DODGERBLUE" layoutX="15.0" layoutY="29.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+      <Circle fx:id="c74" fill="DODGERBLUE" layoutX="163.0" layoutY="284.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+      <Circle fx:id="c75" fill="DODGERBLUE" layoutX="15.0" layoutY="29.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+      <Circle fx:id="c76" fill="DODGERBLUE" layoutX="15.0" layoutY="29.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+      <Circle fx:id="c77" fill="DODGERBLUE" layoutX="15.0" layoutY="29.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+      <Button fx:id="b2" mnemonicParsing="false" onAction="#eButtonAction" text="GO" GridPane.columnIndex="2" />
+   </children>
 </GridPane>
