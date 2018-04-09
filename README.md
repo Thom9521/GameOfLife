@@ -9,3 +9,6 @@ Lavet med inspiration fra <b>[Ándras Ács](https://github.com/andracs)<b>.
 
 
 Projektet viser et 2-dimensionelt array, hvor der bliver dannet levende og døde celler. Efter nogle specifikke regler vil arrayet updatere og cellerne vil efter hånden dø eller vokse alt efter hvor mange levende naboceller de har.
+
+
+![Alt Billede](https://github.com/Thom9521/GameOfLife/blob/master/src/assets/gameoflifebillede.png)
