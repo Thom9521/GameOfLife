@@ -54,9 +54,6 @@ public class Game {
                     rectangleGreen = new Rectangle(20, 20, Color.LIMEGREEN);
                     rectangleGreen.setX(xPosition);
                     rectangleGreen.setY(yPosition);
-                    rectangleGreen.setStrokeType(StrokeType.INSIDE);
-                    rectangleGreen.setStroke(Color.BLACK);
-                    rectangleGreen.setStrokeWidth(2);
                     Main.getPane().getChildren().add(rectangleGreen);
                     rectangles.add(rectangleGreen);
                 }
@@ -65,9 +62,6 @@ public class Game {
                     rectangleWhite = new Rectangle(20, 20, Color.WHITE);
                     rectangleWhite.setX(xPosition);
                     rectangleWhite.setY(yPosition);
-                    rectangleWhite.setStrokeType(StrokeType.INSIDE);
-                    rectangleWhite.setStroke(Color.BLACK);
-                    rectangleWhite.setStrokeWidth(2);
                     Main.getPane().getChildren().add(rectangleWhite);
                     rectangles.add(rectangleWhite);
                 }
