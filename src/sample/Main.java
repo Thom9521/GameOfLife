@@ -14,8 +14,8 @@ import org.reactfx.util.Timer;
 
 public class Main extends Application {
 
-    // Laver et game objekt ved hjælp af Game.createGame metoden
-    private Game game = Game.createGame();
+    // Laver et game objekt ved hjælp af Game.gameStart metoden
+    private Game game = Game.gameStart();
 
     private static Pane pane = new Pane();
 
@@ -25,7 +25,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        game.drawCells();
+        game.createCells();
 
         button.setLayoutX(25);
         button.setLayoutY(533);

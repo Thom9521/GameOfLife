@@ -2,7 +2,6 @@ package sample;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.StrokeType;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -13,7 +12,7 @@ public class Game {
     private final int WORLDX = 20, WORLDY = 20;
 
     // 2 dimensionelt array på 20*20
-    private Cell[][] cellsArray = new Cell[WORLDX][WORLDY];
+    private Cell[][] cellArray = new Cell[WORLDX][WORLDY];
 
     // Constructor til dannelse af døde og levende celler i arrayet
     private Game() {
@@ -31,39 +30,40 @@ public class Game {
                     cell.setAlive(true);
                 }
 
-                cellsArray[x][y] = cell;
+                cellArray[x][y] = cell;
             }
         }
     }
 
     // metode som retunerer game
-    public static Game createGame() {
+    public static Game gameStart() {
         Game game = new Game();
         return game;
     }
 
-    private Rectangle rectangleGreen, rectangleWhite;
-    private ArrayList<Rectangle> rectangles = new ArrayList<>();
 
-    // Metode der løber arrayet igennem og tegner cellerne
-    public void drawCells() {
+    private ArrayList<Rectangle> rectangles = new ArrayList<>();
+    private Rectangle cellAlive, cellDead;
+
+
+    public void createCells() {
         for (int y = 0, yPosition = 25; y < WORLDY; y++, yPosition = yPosition + 22) {
             for (int x = 0, xPosition = 25; x < WORLDX; x++, xPosition = xPosition + 22) {
 
-                if (cellsArray[x][y].isAlive()) {
-                    rectangleGreen = new Rectangle(20, 20, Color.LIMEGREEN);
-                    rectangleGreen.setX(xPosition);
-                    rectangleGreen.setY(yPosition);
-                    Main.getPane().getChildren().add(rectangleGreen);
-                    rectangles.add(rectangleGreen);
+                if (cellArray[x][y].isAlive()) {
+                    cellAlive = new Rectangle(20, 20, Color.LIMEGREEN);
+                    cellAlive.setX(xPosition);
+                    cellAlive.setY(yPosition);
+                    Main.getPane().getChildren().add(cellAlive);
+                    rectangles.add(cellAlive);
                 }
 
-                if (!cellsArray[x][y].isAlive()) {
-                    rectangleWhite = new Rectangle(20, 20, Color.WHITE);
-                    rectangleWhite.setX(xPosition);
-                    rectangleWhite.setY(yPosition);
-                    Main.getPane().getChildren().add(rectangleWhite);
-                    rectangles.add(rectangleWhite);
+                if (!cellArray[x][y].isAlive()) {
+                    cellDead = new Rectangle(20, 20, Color.WHITE);
+                    cellDead.setX(xPosition);
+                    cellDead.setY(yPosition);
+                    Main.getPane().getChildren().add(cellDead);
+                    rectangles.add(cellDead);
                 }
 
             }
@@ -71,60 +71,59 @@ public class Game {
 
     }
 
-    // En update metode der først løber hele arrayet igennem og sætter hver celles livingNeighbours,
-    // dernæst løber arrayet igennem og kalder update() på hver celle.
+  //metode som går arrayet igennem som tjekker efter de specifikke regler
     public void update() {
 
         for (int y = 0; y < WORLDY; y++) {
             for (int x = 0; x < WORLDX; x++) {
 
-                cellsArray[x][y].setLivingNeighbours(0);
+                cellArray[x][y].setLivingNeighbours(0);
 
                 if (x > 0 && y > 0) {
-                    if (cellsArray[x - 1][y - 1].isAlive()) {
-                        cellsArray[x][y].setLivingNeighbours(cellsArray[x][y].getLivingNeighbours() + 1);
+                    if (cellArray[x - 1][y - 1].isAlive()) {
+                        cellArray[x][y].setLivingNeighbours(cellArray[x][y].getLivingNeighbours() + 1);
                     }
                 }
 
                 if (x > 0) {
-                    if (cellsArray[x - 1][y].isAlive()) {
-                        cellsArray[x][y].setLivingNeighbours(cellsArray[x][y].getLivingNeighbours() + 1);
+                    if (cellArray[x - 1][y].isAlive()) {
+                        cellArray[x][y].setLivingNeighbours(cellArray[x][y].getLivingNeighbours() + 1);
                     }
                 }
 
                 if (y < WORLDY - 1 && x > 0) {
-                    if (cellsArray[x - 1][y + 1].isAlive()) {
-                        cellsArray[x][y].setLivingNeighbours(cellsArray[x][y].getLivingNeighbours() + 1);
+                    if (cellArray[x - 1][y + 1].isAlive()) {
+                        cellArray[x][y].setLivingNeighbours(cellArray[x][y].getLivingNeighbours() + 1);
                     }
                 }
 
                 if (y < WORLDY - 1) {
-                    if (cellsArray[x][y + 1].isAlive()) {
-                        cellsArray[x][y].setLivingNeighbours(cellsArray[x][y].getLivingNeighbours() + 1);
+                    if (cellArray[x][y + 1].isAlive()) {
+                        cellArray[x][y].setLivingNeighbours(cellArray[x][y].getLivingNeighbours() + 1);
                     }
                 }
 
                 if (x < WORLDX - 1 && y < WORLDY - 1) {
-                    if (cellsArray[x + 1][y + 1].isAlive()) {
-                        cellsArray[x][y].setLivingNeighbours(cellsArray[x][y].getLivingNeighbours() + 1);
+                    if (cellArray[x + 1][y + 1].isAlive()) {
+                        cellArray[x][y].setLivingNeighbours(cellArray[x][y].getLivingNeighbours() + 1);
                     }
                 }
 
                 if (x < WORLDX - 1) {
-                    if (cellsArray[x + 1][y].isAlive()) {
-                        cellsArray[x][y].setLivingNeighbours(cellsArray[x][y].getLivingNeighbours() + 1);
+                    if (cellArray[x + 1][y].isAlive()) {
+                        cellArray[x][y].setLivingNeighbours(cellArray[x][y].getLivingNeighbours() + 1);
                     }
                 }
 
                 if (y > 0) {
-                    if (cellsArray[x][y - 1].isAlive()) {
-                        cellsArray[x][y].setLivingNeighbours(cellsArray[x][y].getLivingNeighbours() + 1);
+                    if (cellArray[x][y - 1].isAlive()) {
+                        cellArray[x][y].setLivingNeighbours(cellArray[x][y].getLivingNeighbours() + 1);
                     }
                 }
 
                 if (x < WORLDX - 1 && y > 0) {
-                    if (cellsArray[x + 1][y - 1].isAlive()) {
-                        cellsArray[x][y].setLivingNeighbours(cellsArray[x][y].getLivingNeighbours() + 1);
+                    if (cellArray[x + 1][y - 1].isAlive()) {
+                        cellArray[x][y].setLivingNeighbours(cellArray[x][y].getLivingNeighbours() + 1);
                     }
                 }
             }
@@ -132,7 +131,7 @@ public class Game {
 
         for (int y = 0; y < WORLDY; y++) {
             for (int x = 0; x < WORLDX; x++) {
-                cellsArray[x][y].update();
+                cellArray[x][y].update();
             }
         }
     }
@@ -147,7 +146,7 @@ public class Game {
 
         update();
 
-        drawCells();
+        createCells();
 
         counter++;
 
